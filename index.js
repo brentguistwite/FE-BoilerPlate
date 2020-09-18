@@ -44,8 +44,8 @@ import React from 'react';
 import {name} from './{name}';
 
 describe('{name} component', () => {
-  it('', () => {
-
+  it('Renders without crashing', () => {
+    render(<{name}/>);
   });
 });
 `,
@@ -72,7 +72,7 @@ const startCallback = (newFile) => (err) => {
   if (err) {
     throw new Error(err);
   }
-  console.log(`File created at ${process.cwd()}/${newFile}`);
+  console.log(`File created at ${process.cwd()}/${fileName}/${newFile}`);
 };
 
 const writeFile = (file, content, callback) => {
